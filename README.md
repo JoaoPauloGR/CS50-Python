@@ -1,2 +1,12 @@
-"# CS50-Python" 
-"# CS50-Python" 
+# Book Tracker
+    #### Video Demo:  https://youtu.be/FAW9igKyNaE
+    #### Description: This projects consists in a book tracker used to record the user physical books progress. Some people still like to read physical books and technology can be used to help them controlling how each book is progressing. This program uses the dictionary data structure of Python to register each book and its respective progress.
+The program works in the following way: it shows the current user library, if is there any book available. Then, it gives a list of options that are available for the user.
+1 - Add a new book
+2 - Update the progress of a book
+3 - Remove a book
+4 - Quit
+If the user choose the first option, the program will prompt for the Book ISBN (International Standard Book Number), that is a code that each book has above the barcode in the back cover. In this moment, the user enters the numbers showed in the book and the program will get informations about the book using Open Library API. The informations are the name, author, publish date and number of pages. Sometimes, the number of pages is not available. In this case, the user is prompted to enter the number of pages manually. Then, the program will show the information of the book and asks the user if this book will be added to the library. After completing the step, the updated library will be shown in the screen once again.
+If the user chooses to add the book to the library, it will be possible to record the reading progress. The program will show a list of the available books with a number related to them, and the user can use the book index to select which one will be updated. After selecting the book, the user is prompted to enter the current page that is being read. This way, the progress percentage will be recalculated and updated with the current page in the library dictionary.
+If the user chooses to remove a book from the library, the list of available books with its respective indexes will be shown again and the user will be prompted for the index of the book that will be removed, and then it will be removed after a confirmation step.
+As it is necessary to keep these informations saved even when the program is closed, it is used a csv file to save the user library dictionary. It contains all the dictionary keys in the file header (Title,Author,Pages,Current Page,Percentage,Publish Date). To avoid saving multiple times, the csv file is updated when exiting the program. If all the books are removed, the file header line will be erased too, so when the user enter the program, the library will be empty and will not be shown.
